@@ -1,27 +1,27 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "8a20383b884e55ca6289bab35796448c",
-  "translation_date": "2025-07-28T23:55:32+00:00",
+  "original_hash": "83efa75a69bc831277263a6f1ae53669",
+  "translation_date": "2025-08-11T10:09:32+00:00",
   "source_file": "04-PracticalImplementation/README.md",
   "language_code": "fr"
 }
 -->
 # Mise en œuvre pratique
 
-[![Comment construire, tester et déployer des applications MCP avec des outils et workflows réels](../../../translated_images/05.64bea204e25ca891e3dd8b8f960d2170b9a000d8364305f57db3ec4a2c049a9a.fr.png)](https://youtu.be/vCN9-mKBDfQ)
+[![Comment construire, tester et déployer des applications MCP avec des outils et des workflows réels](../../../translated_images/05.64bea204e25ca891e3dd8b8f960d2170b9a000d8364305f57db3ec4a2c049a9a.fr.png)](https://youtu.be/vCN9-mKBDfQ)
 
 _(Cliquez sur l'image ci-dessus pour visionner la vidéo de cette leçon)_
 
-La mise en œuvre pratique est l'endroit où la puissance du Model Context Protocol (MCP) devient concrète. Bien que comprendre la théorie et l'architecture derrière MCP soit important, la véritable valeur apparaît lorsque vous appliquez ces concepts pour construire, tester et déployer des solutions qui résolvent des problèmes réels. Ce chapitre comble le fossé entre les connaissances conceptuelles et le développement pratique, en vous guidant à travers le processus de création d'applications basées sur MCP.
+La mise en œuvre pratique est le moment où la puissance du Model Context Protocol (MCP) devient concrète. Bien que comprendre la théorie et l'architecture derrière MCP soit important, la véritable valeur réside dans l'application de ces concepts pour concevoir, tester et déployer des solutions qui répondent à des problèmes réels. Ce chapitre comble le fossé entre les connaissances conceptuelles et le développement pratique, en vous guidant dans le processus de création d'applications basées sur MCP.
 
-Que vous développiez des assistants intelligents, intégriez l'IA dans des workflows métier ou construisiez des outils personnalisés pour le traitement des données, MCP offre une base flexible. Son design indépendant du langage et ses SDK officiels pour les langages de programmation populaires le rendent accessible à un large éventail de développeurs. En exploitant ces SDK, vous pouvez rapidement prototyper, itérer et étendre vos solutions sur différentes plateformes et environnements.
+Que vous développiez des assistants intelligents, intégriez l'IA dans des workflows métier ou construisiez des outils personnalisés pour le traitement des données, MCP offre une base flexible. Son design indépendant du langage et ses SDK officiels pour les langages de programmation populaires le rendent accessible à un large éventail de développeurs. En exploitant ces SDK, vous pouvez rapidement prototyper, itérer et déployer vos solutions sur différentes plateformes et environnements.
 
-Dans les sections suivantes, vous trouverez des exemples pratiques, du code d'exemple et des stratégies de déploiement qui démontrent comment implémenter MCP en C#, Java, TypeScript, JavaScript et Python. Vous apprendrez également à déboguer et tester vos serveurs MCP, gérer les API et déployer des solutions dans le cloud avec Azure. Ces ressources pratiques sont conçues pour accélérer votre apprentissage et vous aider à construire des applications MCP robustes et prêtes pour la production.
+Dans les sections suivantes, vous trouverez des exemples pratiques, du code d'exemple et des stratégies de déploiement qui montrent comment implémenter MCP en C#, Java avec Spring, TypeScript, JavaScript et Python. Vous apprendrez également à déboguer et tester vos serveurs MCP, gérer les API et déployer des solutions dans le cloud avec Azure. Ces ressources pratiques sont conçues pour accélérer votre apprentissage et vous aider à créer des applications MCP robustes et prêtes pour la production.
 
 ## Aperçu
 
-Cette leçon se concentre sur les aspects pratiques de l'implémentation de MCP dans plusieurs langages de programmation. Nous explorerons comment utiliser les SDK MCP en C#, Java, TypeScript, JavaScript et Python pour construire des applications robustes, déboguer et tester des serveurs MCP, et créer des ressources, des invites et des outils réutilisables.
+Cette leçon se concentre sur les aspects pratiques de l'implémentation de MCP dans plusieurs langages de programmation. Nous explorerons comment utiliser les SDK MCP en C#, Java avec Spring, TypeScript, JavaScript et Python pour construire des applications robustes, déboguer et tester des serveurs MCP, et créer des ressources, des invites et des outils réutilisables.
 
 ## Objectifs d'apprentissage
 
@@ -38,7 +38,7 @@ Cette leçon se concentre sur les aspects pratiques de l'implémentation de MCP 
 Le Model Context Protocol propose des SDK officiels pour plusieurs langages :
 
 - [SDK C#](https://github.com/modelcontextprotocol/csharp-sdk)
-- [SDK Java](https://github.com/modelcontextprotocol/java-sdk) 
+- [SDK Java avec Spring](https://github.com/modelcontextprotocol/java-sdk) **Remarque :** nécessite une dépendance à [Project Reactor](https://projectreactor.io). (Voir [discussion issue 246](https://github.com/orgs/modelcontextprotocol/discussions/246).)
 - [SDK TypeScript](https://github.com/modelcontextprotocol/typescript-sdk)
 - [SDK Python](https://github.com/modelcontextprotocol/python-sdk)
 - [SDK Kotlin](https://github.com/modelcontextprotocol/kotlin-sdk)
@@ -52,7 +52,7 @@ Cette section fournit des exemples pratiques d'implémentation de MCP dans plusi
 Le dépôt inclut [des implémentations d'exemple](../../../04-PracticalImplementation/samples) dans les langages suivants :
 
 - [C#](./samples/csharp/README.md)
-- [Java](./samples/java/containerapp/README.md)
+- [Java avec Spring](./samples/java/containerapp/README.md)
 - [TypeScript](./samples/typescript/README.md)
 - [JavaScript](./samples/javascript/README.md)
 - [Python](./samples/python/README.md)
@@ -61,7 +61,7 @@ Chaque exemple démontre des concepts clés de MCP et des modèles d'implémenta
 
 ## Fonctionnalités principales du serveur
 
-Les serveurs MCP peuvent implémenter n'importe quelle combinaison de ces fonctionnalités :
+Les serveurs MCP peuvent implémenter une combinaison des fonctionnalités suivantes :
 
 ### Ressources
 
@@ -99,7 +99,7 @@ Le dépôt officiel du SDK C# contient plusieurs implémentations d'exemple dém
 - **Intégration ASP.NET** : Exemples démontrant l'intégration avec ASP.NET Core
 - **Modèles d'implémentation d'outils** : Divers modèles pour implémenter des outils avec différents niveaux de complexité
 
-Le SDK MCP C# est en aperçu et les API peuvent évoluer. Nous mettrons continuellement à jour ce blog au fur et à mesure de l'évolution du SDK.
+Le SDK MCP C# est en aperçu et les API peuvent évoluer. Nous mettrons continuellement à jour ce blog au fur et à mesure que le SDK évolue.
 
 ### Fonctionnalités clés
 
@@ -108,18 +108,18 @@ Le SDK MCP C# est en aperçu et les API peuvent évoluer. Nous mettrons continue
 
 Pour des exemples complets d'implémentation en C#, visitez le [dépôt officiel des exemples du SDK C#](https://github.com/modelcontextprotocol/csharp-sdk)
 
-## Implémentation d'exemple : Implémentation en Java
+## Implémentation d'exemple : Implémentation en Java avec Spring
 
-Le SDK Java offre des options robustes d'implémentation MCP avec des fonctionnalités de niveau entreprise.
+Le SDK Java avec Spring offre des options d'implémentation MCP robustes avec des fonctionnalités de niveau entreprise.
 
 ### Fonctionnalités clés
 
 - Intégration avec le framework Spring
-- Forte sécurité typée
+- Forte sécurité des types
 - Support de la programmation réactive
 - Gestion complète des erreurs
 
-Pour un exemple complet d'implémentation en Java, consultez [l'exemple Java](samples/java/containerapp/README.md) dans le répertoire des exemples.
+Pour un exemple complet d'implémentation en Java avec Spring, consultez [l'exemple Java avec Spring](samples/java/containerapp/README.md) dans le répertoire des exemples.
 
 ## Implémentation d'exemple : Implémentation en JavaScript
 
@@ -142,7 +142,7 @@ Le SDK Python offre une approche Pythonique de l'implémentation MCP avec d'exce
 
 - Support async/await avec asyncio
 - Intégration avec FastAPI
-- Enregistrement simple des outils
+- Enregistrement d'outils simple
 - Intégration native avec les bibliothèques ML populaires
 
 Pour un exemple complet d'implémentation en Python, consultez [l'exemple Python](samples/python/README.md) dans le répertoire des exemples.
@@ -219,13 +219,13 @@ Voyons si nous pouvons déployer l'exemple mentionné précédemment :
 
 1. CTRL cliquez pour charger l'application web MCP Inspector depuis l'URL affichée par l'application (par exemple [http://127.0.0.1:6274/#resources](http://127.0.0.1:6274/#resources))
 1. Définissez le type de transport sur `SSE`
-1. Définissez l'URL sur votre point de terminaison SSE de gestion des API affiché après `azd up` et **Connectez-vous** :
+1. Définissez l'URL sur votre point de terminaison SSE API Management en cours d'exécution affiché après `azd up` et **Connectez-vous** :
 
     ```shell
     https://<apim-servicename-from-azd-output>.azure-api.net/mcp/sse
     ```
 
-1. **Lister les outils**. Cliquez sur un outil et **Exécutez l'outil**.  
+1. **Lister les outils**. Cliquez sur un outil et **Exécutez l'outil**.
 
 Si toutes les étapes ont fonctionné, vous devriez maintenant être connecté au serveur MCP et avoir pu appeler un outil.
 
@@ -233,7 +233,7 @@ Si toutes les étapes ont fonctionné, vous devriez maintenant être connecté a
 
 [Remote-mcp-functions](https://github.com/Azure-Samples/remote-mcp-functions-dotnet) : Cet ensemble de dépôts est un modèle de démarrage rapide pour construire et déployer des serveurs MCP (Model Context Protocol) distants personnalisés en utilisant Azure Functions avec Python, C# .NET ou Node/TypeScript.
 
-Les exemples fournissent une solution complète qui permet aux développeurs de :
+Les exemples fournissent une solution complète permettant aux développeurs de :
 
 - Construire et exécuter localement : Développer et déboguer un serveur MCP sur une machine locale
 - Déployer sur Azure : Déployer facilement dans le cloud avec une simple commande azd up
@@ -262,7 +262,7 @@ Le dépôt inclut tous les fichiers de configuration nécessaires, le code sourc
 - Le processus de débogage et de test est essentiel pour des applications MCP fiables
 - Les modèles d'invites réutilisables permettent des interactions cohérentes avec l'IA
 - Des workflows bien conçus peuvent orchestrer des tâches complexes en utilisant plusieurs outils
-- L'implémentation de solutions MCP nécessite une prise en compte de la sécurité, de la performance et de la gestion des erreurs
+- L'implémentation de solutions MCP nécessite une prise en compte de la sécurité, des performances et de la gestion des erreurs
 
 ## Exercice
 
@@ -280,4 +280,4 @@ Concevez un workflow MCP pratique qui répond à un problème réel dans votre d
 Suivant : [Sujets avancés](../05-AdvancedTopics/README.md)
 
 **Avertissement** :  
-Ce document a été traduit à l'aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d'assurer l'exactitude, veuillez noter que les traductions automatisées peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant autorité. Pour des informations critiques, il est recommandé de recourir à une traduction humaine professionnelle. Nous déclinons toute responsabilité en cas de malentendus ou d'interprétations erronées résultant de l'utilisation de cette traduction.
+Ce document a été traduit à l'aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d'assurer l'exactitude, veuillez noter que les traductions automatisées peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant autorité. Pour des informations critiques, il est recommandé de recourir à une traduction professionnelle réalisée par un humain. Nous déclinons toute responsabilité en cas de malentendus ou d'interprétations erronées résultant de l'utilisation de cette traduction.

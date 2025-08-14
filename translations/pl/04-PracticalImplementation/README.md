@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "8a20383b884e55ca6289bab35796448c",
-  "translation_date": "2025-07-29T01:25:05+00:00",
+  "original_hash": "83efa75a69bc831277263a6f1ae53669",
+  "translation_date": "2025-08-11T11:31:46+00:00",
   "source_file": "04-PracticalImplementation/README.md",
   "language_code": "pl"
 }
@@ -17,11 +17,11 @@ Praktyczne wdrożenie to moment, w którym moc Model Context Protocol (MCP) staj
 
 Niezależnie od tego, czy tworzysz inteligentnych asystentów, integrujesz AI z procesami biznesowymi, czy budujesz niestandardowe narzędzia do przetwarzania danych, MCP zapewnia elastyczną podstawę. Jego niezależny od języka projekt oraz oficjalne SDK dla popularnych języków programowania sprawiają, że jest dostępny dla szerokiego grona programistów. Korzystając z tych SDK, możesz szybko prototypować, iterować i skalować swoje rozwiązania na różnych platformach i w różnych środowiskach.
 
-W kolejnych sekcjach znajdziesz praktyczne przykłady, przykładowy kod i strategie wdrażania, które pokazują, jak zaimplementować MCP w C#, Java, TypeScript, JavaScript i Pythonie. Dowiesz się również, jak debugować i testować serwery MCP, zarządzać API oraz wdrażać rozwiązania w chmurze za pomocą Azure. Te praktyczne zasoby zostały zaprojektowane, aby przyspieszyć naukę i pomóc Ci pewnie budować solidne aplikacje MCP gotowe do produkcji.
+W kolejnych sekcjach znajdziesz praktyczne przykłady, przykładowy kod i strategie wdrażania, które pokazują, jak zaimplementować MCP w C#, Javie z Spring, TypeScript, JavaScript i Pythonie. Dowiesz się również, jak debugować i testować serwery MCP, zarządzać API oraz wdrażać rozwiązania w chmurze za pomocą Azure. Te praktyczne zasoby zostały zaprojektowane, aby przyspieszyć naukę i pomóc Ci pewnie budować solidne aplikacje MCP gotowe do produkcji.
 
 ## Przegląd
 
-Ta lekcja koncentruje się na praktycznych aspektach wdrażania MCP w różnych językach programowania. Zbadamy, jak korzystać z SDK MCP w C#, Java, TypeScript, JavaScript i Pythonie, aby budować solidne aplikacje, debugować i testować serwery MCP oraz tworzyć zasoby, szablony i narzędzia.
+Ta lekcja koncentruje się na praktycznych aspektach wdrażania MCP w różnych językach programowania. Zbadamy, jak korzystać z SDK MCP w C#, Javie z Spring, TypeScript, JavaScript i Pythonie, aby budować solidne aplikacje, debugować i testować serwery MCP oraz tworzyć zasoby, szablony i narzędzia wielokrotnego użytku.
 
 ## Cele nauki
 
@@ -38,7 +38,7 @@ Po zakończeniu tej lekcji będziesz w stanie:
 Model Context Protocol oferuje oficjalne SDK dla wielu języków:
 
 - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
-- [Java SDK](https://github.com/modelcontextprotocol/java-sdk) 
+- [Java z Spring SDK](https://github.com/modelcontextprotocol/java-sdk) **Uwaga:** wymaga zależności od [Project Reactor](https://projectreactor.io). (Zobacz [dyskusję w issue 246](https://github.com/orgs/modelcontextprotocol/discussions/246).)
 - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk)
 - [Python SDK](https://github.com/modelcontextprotocol/python-sdk)
 - [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk)
@@ -52,14 +52,14 @@ Ta sekcja zawiera praktyczne przykłady wdrażania MCP w różnych językach pro
 Repozytorium zawiera [przykładowe wdrożenia](../../../04-PracticalImplementation/samples) w następujących językach:
 
 - [C#](./samples/csharp/README.md)
-- [Java](./samples/java/containerapp/README.md)
+- [Java z Spring](./samples/java/containerapp/README.md)
 - [TypeScript](./samples/typescript/README.md)
 - [JavaScript](./samples/javascript/README.md)
 - [Python](./samples/python/README.md)
 
-Każdy przykład demonstruje kluczowe koncepcje MCP i wzorce wdrożeniowe dla danego języka i ekosystemu.
+Każdy przykład demonstruje kluczowe koncepcje MCP i wzorce wdrożenia dla danego języka i ekosystemu.
 
-## Kluczowe funkcje serwera
+## Podstawowe funkcje serwera
 
 Serwery MCP mogą implementować dowolną kombinację tych funkcji:
 
@@ -77,7 +77,7 @@ Zasoby dostarczają kontekst i dane dla użytkownika lub modelu AI:
 Szablony to wiadomości i przepływy pracy dla użytkowników:
 
 - Predefiniowane szablony rozmów
-- Wzorce interakcji prowadzonej
+- Wzorce interakcji prowadzących
 - Specjalistyczne struktury dialogowe
 
 ### Narzędzia
@@ -95,7 +95,7 @@ Oficjalne repozytorium SDK C# zawiera kilka przykładów wdrożeń, które pokaz
 
 - **Podstawowy klient MCP**: Prosty przykład pokazujący, jak stworzyć klienta MCP i wywołać narzędzia
 - **Podstawowy serwer MCP**: Minimalna implementacja serwera z podstawową rejestracją narzędzi
-- **Zaawansowany serwer MCP**: Serwer z pełnym zestawem funkcji, w tym rejestracją narzędzi, uwierzytelnianiem i obsługą błędów
+- **Zaawansowany serwer MCP**: Serwer o pełnej funkcjonalności z rejestracją narzędzi, uwierzytelnianiem i obsługą błędów
 - **Integracja z ASP.NET**: Przykłady pokazujące integrację z ASP.NET Core
 - **Wzorce implementacji narzędzi**: Różne wzorce implementacji narzędzi o różnym poziomie złożoności
 
@@ -108,9 +108,9 @@ SDK MCP dla C# jest w wersji preview i API mogą ulec zmianie. Będziemy na bie�
 
 Pełne przykłady implementacji w C# znajdziesz w [oficjalnym repozytorium przykładów SDK C#](https://github.com/modelcontextprotocol/csharp-sdk)
 
-## Przykładowe wdrożenie: Implementacja w Java
+## Przykładowe wdrożenie: Implementacja w Javie z Spring
 
-SDK Java oferuje solidne opcje wdrożenia MCP z funkcjami klasy korporacyjnej.
+SDK Java z Spring oferuje solidne opcje wdrożenia MCP z funkcjami klasy enterprise.
 
 ### Kluczowe funkcje
 
@@ -119,7 +119,7 @@ SDK Java oferuje solidne opcje wdrożenia MCP z funkcjami klasy korporacyjnej.
 - Obsługa programowania reaktywnego
 - Kompleksowa obsługa błędów
 
-Pełny przykład implementacji w Java znajdziesz w [przykładzie Java](samples/java/containerapp/README.md) w katalogu przykładów.
+Pełny przykład implementacji w Javie z Spring znajdziesz w [Java z Spring sample](samples/java/containerapp/README.md) w katalogu przykładów.
 
 ## Przykładowe wdrożenie: Implementacja w JavaScript
 
@@ -132,9 +132,9 @@ SDK JavaScript zapewnia lekkie i elastyczne podejście do wdrożenia MCP.
 - Łatwa integracja z Express i innymi frameworkami
 - Obsługa WebSocket dla strumieniowania
 
-Pełny przykład implementacji w JavaScript znajdziesz w [przykładzie JavaScript](samples/javascript/README.md) w katalogu przykładów.
+Pełny przykład implementacji w JavaScript znajdziesz w [JavaScript sample](samples/javascript/README.md) w katalogu przykładów.
 
-## Przykładowe wdrożenie: Implementacja w Python
+## Przykładowe wdrożenie: Implementacja w Pythonie
 
 SDK Python oferuje podejście zgodne z filozofią Pythona do wdrożenia MCP z doskonałą integracją z frameworkami ML.
 
@@ -145,11 +145,11 @@ SDK Python oferuje podejście zgodne z filozofią Pythona do wdrożenia MCP z do
 - Prosta rejestracja narzędzi
 - Natywna integracja z popularnymi bibliotekami ML
 
-Pełny przykład implementacji w Python znajdziesz w [przykładzie Python](samples/python/README.md) w katalogu przykładów.
+Pełny przykład implementacji w Pythonie znajdziesz w [Python sample](samples/python/README.md) w katalogu przykładów.
 
 ## Zarządzanie API
 
-Azure API Management to świetne rozwiązanie, które pozwala zabezpieczyć serwery MCP. Pomysł polega na umieszczeniu instancji Azure API Management przed serwerem MCP i pozwoleniu jej na obsługę funkcji, które mogą być potrzebne, takich jak:
+Azure API Management to świetne rozwiązanie do zabezpieczenia serwerów MCP. Pomysł polega na umieszczeniu instancji Azure API Management przed serwerem MCP i pozwoleniu jej na obsługę funkcji, które mogą być potrzebne, takich jak:
 
 - ograniczanie liczby żądań
 - zarządzanie tokenami
@@ -159,7 +159,7 @@ Azure API Management to świetne rozwiązanie, które pozwala zabezpieczyć serw
 
 ### Przykład Azure
 
-Oto przykład Azure, który pokazuje, jak [utworzyć serwer MCP i zabezpieczyć go za pomocą Azure API Management](https://github.com/Azure-Samples/remote-mcp-apim-functions-python).
+Oto przykład Azure, który pokazuje, jak [stworzyć serwer MCP i zabezpieczyć go za pomocą Azure API Management](https://github.com/Azure-Samples/remote-mcp-apim-functions-python).
 
 Zobacz, jak wygląda przepływ autoryzacji na poniższym obrazku:
 
@@ -225,7 +225,7 @@ Zobaczmy, czy możemy wdrożyć wspomniany wcześniej przykład:
     https://<apim-servicename-from-azd-output>.azure-api.net/mcp/sse
     ```
 
-1. **Lista narzędzi**. Kliknij na narzędzie i **Uruchom narzędzie**.
+1. **Lista narzędzi**. Kliknij narzędzie i **Uruchom narzędzie**.
 
 Jeśli wszystkie kroki się powiodły, powinieneś być teraz połączony z serwerem MCP i być w stanie wywołać narzędzie.
 
@@ -260,8 +260,8 @@ Repozytorium zawiera wszystkie niezbędne pliki konfiguracyjne, kod źródłowy 
 
 - SDK MCP dostarczają narzędzia specyficzne dla języka do wdrażania solidnych rozwiązań MCP
 - Proces debugowania i testowania jest kluczowy dla niezawodnych aplikacji MCP
-- Wielokrotne użycie szablonów umożliwia spójne interakcje AI
-- Dobrze zaprojektowane przepływy pracy mogą orkiestrować złożone zadania za pomocą wielu narzędzi
+- Wielokrotnego użytku szablony interakcji umożliwiają spójne interakcje AI
+- Dobrze zaprojektowane przepływy pracy mogą organizować złożone zadania za pomocą wielu narzędzi
 - Wdrażanie rozwiązań MCP wymaga uwzględnienia bezpieczeństwa, wydajności i obsługi błędów
 
 ## Ćwiczenie
@@ -271,7 +271,7 @@ Zaprojektuj praktyczny przepływ pracy MCP, który rozwiązuje rzeczywisty probl
 1. Zidentyfikuj 3-4 narzędzia, które byłyby przydatne do rozwiązania tego problemu
 2. Stwórz diagram przepływu pracy pokazujący, jak te narzędzia współdziałają
 3. Zaimplementuj podstawową wersję jednego z narzędzi w preferowanym przez Ciebie języku
-4. Stwórz szablon, który pomoże modelowi efektywnie korzystać z Twojego narzędzia
+4. Stwórz szablon interakcji, który pomoże modelowi efektywnie korzystać z Twojego narzędzia
 
 ## Dodatkowe zasoby
 
@@ -280,4 +280,4 @@ Zaprojektuj praktyczny przepływ pracy MCP, który rozwiązuje rzeczywisty probl
 Dalej: [Zaawansowane tematy](../05-AdvancedTopics/README.md)
 
 **Zastrzeżenie**:  
-Ten dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Chociaż staramy się zapewnić dokładność, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w jego rodzimym języku powinien być uznawany za wiarygodne źródło. W przypadku informacji krytycznych zaleca się skorzystanie z profesjonalnego tłumaczenia przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z użycia tego tłumaczenia.
+Ten dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Chociaż dokładamy wszelkich starań, aby zapewnić poprawność tłumaczenia, prosimy pamiętać, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w jego rodzimym języku powinien być uznawany za autorytatywne źródło. W przypadku informacji o kluczowym znaczeniu zaleca się skorzystanie z profesjonalnego tłumaczenia przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.

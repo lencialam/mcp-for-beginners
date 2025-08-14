@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d0f0d7012325b286e4a717791b23ae7e",
-  "translation_date": "2025-07-13T17:59:39+00:00",
+  "original_hash": "d26f746e21775c30b4d7ed97962b24df",
+  "translation_date": "2025-08-11T10:47:52+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/python/README.md",
   "language_code": "pt"
 }
 -->
 # Executar este exemplo
 
-Recomenda-se instalar o `uv`, mas não é obrigatório, veja as [instruções](https://docs.astral.sh/uv/#highlights)
+Recomenda-se instalar `uv`, mas não é obrigatório. Consulte as [instruções](https://docs.astral.sh/uv/#highlights).
 
 ## -0- Criar um ambiente virtual
 
@@ -20,7 +20,7 @@ python -m venv venv
 ## -1- Ativar o ambiente virtual
 
 ```bash
-venv\Scrips\activate
+venv\Scripts\activate
 ```
 
 ## -2- Instalar as dependências
@@ -43,19 +43,19 @@ Com o servidor a correr num terminal, abra outro terminal e execute o seguinte c
 mcp dev server.py
 ```
 
-Isto deverá iniciar um servidor web com uma interface visual que permite testar o exemplo.
+Isto deverá iniciar um servidor web com uma interface visual que lhe permitirá testar o exemplo.
 
-Assim que o servidor estiver ligado:
+Depois de o servidor estar conectado:
 
-- experimente listar as ferramentas e executar `add`, com os argumentos 2 e 4, deverá ver 6 no resultado.
+- Experimente listar as ferramentas e executar `add`, com os argumentos 2 e 4. Deverá ver 6 como resultado.
 
-- vá a resources e resource template e chame get_greeting, escreva um nome e deverá ver uma saudação com o nome que forneceu.
+- Vá a resources e resource template e chame get_greeting. Insira um nome e deverá ver uma saudação com o nome que forneceu.
 
-### Testar em modo CLI
+### Testar no modo CLI
 
-O inspector que executou é na verdade uma aplicação Node.js e o `mcp dev` é um wrapper à sua volta.
+O inspetor que executou é, na verdade, uma aplicação Node.js, e `mcp dev` é um wrapper em torno dela.
 
-Pode lançá-lo diretamente em modo CLI executando o seguinte comando:
+Pode iniciá-lo diretamente no modo CLI executando o seguinte comando:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/list
@@ -112,9 +112,9 @@ Deverá ver a seguinte saída:
 }
 ```
 
-> ![!TIP]
-> Normalmente é muito mais rápido executar o inspector em modo CLI do que no navegador.
-> Leia mais sobre o inspector [aqui](https://github.com/modelcontextprotocol/inspector).
+> [!TIP]
+> Geralmente, é muito mais rápido executar o inspetor no modo CLI do que no navegador.
+> Leia mais sobre o inspetor [aqui](https://github.com/modelcontextprotocol/inspector).
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, por favor tenha em conta que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações erradas decorrentes da utilização desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, é importante notar que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autoritária. Para informações críticas, recomenda-se a tradução profissional realizada por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
